@@ -61,7 +61,8 @@ public class isPalindrome2 {
 
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
+        isPalindrome2 palindrome2 = new isPalindrome2();
         // write respective main function
         // Example usage:
 //        ListNode node1 = new ListNode(1);
@@ -85,6 +86,6 @@ public class isPalindrome2 {
         node4.next = null;
 
 
-        System.out.println(Palindrome2(node1)); // Output: true
+        System.out.println(palindrome2.Palindrome2(node1)); // Output: true
     }
 }
