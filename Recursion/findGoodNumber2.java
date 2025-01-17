@@ -3,7 +3,7 @@ package Recursion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class good2 {
+public class findGoodNumber2 {
     int count=0;
     int even=-2;
     int prime=1;
@@ -94,7 +94,7 @@ public class good2 {
 
     public static void main()
     {
-        good2 good2= new good2();
+        findGoodNumber2 good2= new findGoodNumber2();
         int n=good2.countGoodNumbers(4);
 
         System.out.println("Numbers are \t"+n);
