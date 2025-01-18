@@ -14,14 +14,23 @@ public class EleminationGame {
     public int lastRemaining(int n) {
         for(int i=0;i<n;i++)
         {
-            arr.add(i);
+            arr.add(i+1);
         }
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(arr.get(i));
+        }
+
         return check2(arr,current,n);
 
     }
 
     private int check2(List<Integer> arr,int current,int n) {
-        if(current>=n/2||current<=0&&arr.size()!=n)
+        if(arr.size()==1)
+        {
+            return arr.getFirst();
+        }
+        if(counter>n/2||counter<=0&&arr.size()!=n)
         {
             if(arr.size()==1)
             {
@@ -29,24 +38,35 @@ public class EleminationGame {
             }
             else
             {
-                current=arr.size();
-                bit=1;
-                check2(arr,current,n);
+                if(bit==0)
+                {
+                    current=arr.size();
+                    bit=1;
+                    counter=arr.size();
+                    return check2(arr,current,n);
+                }
+                else {
+                    current = 0;
+                    bit = 0;
+                    counter = 1;
+                   return check2(arr, current, n);
+                }
 
             }
         }
         if(bit==0)
         {
+            counter++;
             System.out.println(current);
-            arr.remove(arr.get(0));
-            current+=2;
+            arr.remove(arr.get(current));
+            current+=1;
 
             res=check2(arr,current,n);
         }
         else
         {
-
-            arr.remove(arr.get(current));
+            counter-=2;
+            arr.remove(arr.get(current-1));
             current-=2;
             res=check2(arr,current,n);
         }
