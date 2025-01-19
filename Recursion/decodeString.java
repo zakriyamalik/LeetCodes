@@ -39,43 +39,42 @@ public class decodeString {
             sizes.add(last_size);
             if(last_size==0)
             {
-                sizes.removeLast();
-                if(!sizes.isEmpty())
-                {
-                    int preLast=sizes.getLast();
-                    preLast-=1;
+                if(s.charAt(curr_index+1)==']') {
+                    sizes.removeLast();
+                    if (!sizes.isEmpty()) {
+                        int preLast = sizes.getLast();
+                        preLast -= 1;
 
-                    if(preLast==0)
-                    {
-                        sizes.removeLast();
-                        starts.removeLast();
-                        if(!sizes.isEmpty())
-                        {
-                            curr_index=starts.getLast();
-                            decodeString(s);
-                        }
-                        else
-                        {
-                            curr_index++;
+                        if (preLast == 0) {
+                            sizes.removeLast();
+                            starts.removeLast();
+                            if (!sizes.isEmpty()) {
+                                curr_index = starts.getLast();
+                                decodeString(s);
+                            } else {
+                                curr_index++;
+                                check2(s);
+                            }
+                        } else {
+                            sizes.removeLast();
+                            sizes.add(preLast);
+
+                            starts.removeLast();
+                            curr_index = starts.getLast();
                             check2(s);
                         }
-                    }
-                    else
-                    {
-                        sizes.removeLast();
-                        sizes.add(preLast);
-
-                        starts.removeLast();
-                        curr_index=starts.getLast();
-                        decodeString(s);
+                    } else {
+                        curr_index++;
+                        check2(s);
                     }
                 }
                 else
                 {
+                    sizes.removeLast();
+                    starts.removeLast();
                     curr_index++;
                     check2(s);
                 }
-
 
             }
             else
