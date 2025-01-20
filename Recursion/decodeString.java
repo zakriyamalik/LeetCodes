@@ -20,6 +20,11 @@ public class decodeString {
 
             return decoded;
         }
+//        if(curr_index>=s.length())
+//        {
+//
+//            return decoded;
+//        }
         if(Character.isDigit(s.charAt(curr_index)))
         {
             String Tempsize = checkSize(s);
