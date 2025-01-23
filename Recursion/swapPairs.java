@@ -17,7 +17,7 @@ public class swapPairs {
         }
         ListNode temp=new ListNode();
         temp=curr;
-        curr=currNext.next.next;
+        curr=currNext.next;
         currNext=temp;
        return check2(head,curr,currNext);
 
