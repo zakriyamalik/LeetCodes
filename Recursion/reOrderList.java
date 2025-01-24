@@ -143,41 +143,11 @@ package Recursion;
 
 
 public class reOrderList {
-    int size=0;
     int count1=0;
-    int count2=0;
-    ListNode returning;
     ListNode current;
-    public void reorderList(ListNode head) {
 
-        ListNode temp=head;
-        ListNode first=head;
-        returning=head;
-        while (temp!=null)
-        {
-            size+=1;
-            temp=temp.next;
-
-        }
-        System.out.println("Size is "+size);
-
-        if(size%2==0)
-        {
-            check1(head);
-        }
-        else
-        {
-            check1(head);
-        }
-
-
-
-
-
-    }
-
-    private void check1(ListNode head) {
-        if(count1==size/2)
+    private void reorderList(ListNode head) {
+        if(head==null||head.next==null)
         {
             return;
 
@@ -188,7 +158,7 @@ public class reOrderList {
         current.next=nextOne;
         current=current.next.next;
         count1++;
-        check1(current);
+        reorderList(current);
 
     }
 
@@ -208,10 +178,12 @@ public class reOrderList {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-     //   head.next.next.next.next.next = new ListNode(6);
+      //  head.next.next.next.next.next = new ListNode(6);
 
         reOrderList reorderList = new reOrderList();
         reorderList.reorderList(head);
+        // reorderList.check1(head);
+      //  reorderList.reorderList(head);
 
         ListNode current = head;
         while (current!= null) {
