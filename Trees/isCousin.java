@@ -156,7 +156,7 @@ public class isCousin {
 
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         isCousin isCousin=new isCousin();
         // Test the function with a binary tree input one
 //        TreeNode root = new TreeNode(1);
