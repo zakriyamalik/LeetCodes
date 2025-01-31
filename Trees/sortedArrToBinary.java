@@ -10,6 +10,7 @@ public class sortedArrToBinary {
         return root;
     }
 
+
     private TreeNode check2(int num, TreeNode root) {
         if(root==null)
         {
