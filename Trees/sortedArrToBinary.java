@@ -1,9 +1,15 @@
 package Trees;
 
 public class sortedArrToBinary {
-    TreeNode root=new TreeNode();
+    TreeNode root=null;
+    int size=0;
     public TreeNode sortedArrayToBST(int[] nums) {
-        for (int i=0;i<nums.length;i++)
+        size=nums.length/2;
+        for(int i=size;i<nums.length;i++)
+        {
+            root= check2(nums[i],root);
+        }
+        for (int i=0;i<size;i++)
         {
            root= check2(nums[i],root);
         }
