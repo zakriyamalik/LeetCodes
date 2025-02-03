@@ -50,32 +50,34 @@ package Recursion;
 
 
 public class swapPairs {
-    ListNode toReturn;
-    ListNode temp;
-    ListNode curr;
+    ListNode prev;
     ListNode dummy=new ListNode(0);
     public ListNode swapPairs(ListNode head) {
         dummy.next=head;
-        toReturn=head;
-        curr=head;
-        check2(head);
-        return toReturn;
+        return swapPairs1(head);
+    }
+    public ListNode swapPairs1(ListNode head) {
+        if(head==null)
+        {
+            return null;
+        }
+        prev=head;
+        head=prev.next;
+        head=check2(head);
+        swapPairs1(head);
 
+        return dummy.next;
     }
 
     private ListNode check2(ListNode head) {
-        if(head==null||head.next==null)
-        {
-            return head;
-        }
-        temp=head;
-        head=head.next;
-        temp.next=head.next;
-        head.next=temp;
+        prev.next=head.next;
+        head.next=prev;
+        dummy.next=head;
+        prev=prev.next;
+        return prev;
 
-        check2(head.next.next);
-        return null;
     }
+
 
     public static void main() {
         // write respective main function
