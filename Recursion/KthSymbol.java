@@ -175,54 +175,98 @@
 
 
 
+//package Recursion;
+//
+//import java.util.ArrayList;
+//import java.util.Collections;
+//import java.util.List;
+//
+//public class KthSymbol {
+//    List<Integer> list=new ArrayList<>();
+//    List<Integer> tempList=new ArrayList<>();
+//    int size=0;
+//    public void intializer() {
+//        list.add(0);
+//
+//    }
+//    public int kthGrammar(int n, int k) {
+//       // intializer();
+//        check2(n);
+//        System.out.println("Element is "+list.get(k-1)+"  List is \t"+list);
+//       return list.get(k-1);
+//    }
+//
+//    private List<Integer> check2(int n) {
+//        if(n==1)
+//        {
+//            list.add(0);
+//            return list;
+//        }int mid=0;
+//        if(n>2)
+//        {
+//            mid=(n/2)+1;
+//        }
+//        else
+//        {
+//            mid=(n/2);
+//        }
+//        check2(mid);
+//        tempList.addAll(list);
+//        for (int j = 0; j < list.size(); j++) {
+//            tempList.set(j, list.get(j) == 0 ? 1 : 0);
+//        }
+//
+//        list.addAll(tempList);
+//        tempList.clear();
+//        return list;
+//    }
+//
+//    public static void main() {
+//        KthSymbol kthSymbol=new KthSymbol();
+//        kthSymbol.kthGrammar(40,1);
+//    }
+//}
+
+
+
+//Fifth Logic
+
 package Recursion;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class KthSymbol {
-    List<Integer> list=new ArrayList<>();
-    List<Integer> tempList=new ArrayList<>();
-    int size=0;
-    public void intializer() {
+    List<Integer> list = new ArrayList<>();
+    List<Integer> tempList = new ArrayList<>();
+    int size = 0;
+
+    public void initializer() {
         list.add(0);
-
     }
+
     public int kthGrammar(int n, int k) {
-       // intializer();
-        check2(n);
-        System.out.println("Element is "+list.get(k-1)+"  List is \t"+list);
-       return list.get(k-1);
+        initializer();
+        return findKthSymbol(n, k);
     }
 
-    private List<Integer> check2(int n) {
-        if(n==1)
-        {
-            list.add(0);
-            return list;
-        }int mid=0;
-        if(n>2)
-        {
-            mid=(n/2)+1;
-        }
-        else
-        {
-            mid=(n/2);
-        }
-        check2(mid);
-        tempList.addAll(list);
-        for (int j = 0; j < list.size(); j++) {
-            tempList.set(j, list.get(j) == 0 ? 1 : 0);
+    private int findKthSymbol(int n, int k) {
+        if (n == 1) {
+            return 0;
         }
 
-        list.addAll(tempList);
-        tempList.clear();
-        return list;
+        int mid = (1 << (n - 1)) / 2;
+
+        if (k <= mid) {
+            return findKthSymbol(n - 1, k);
+        } else {
+            return 1 - findKthSymbol(n - 1, k - mid);
+        }
     }
 
-    public static void main() {
-        KthSymbol kthSymbol=new KthSymbol();
-        kthSymbol.kthGrammar(40,1);
+    public static void main(String[] args) {
+        KthSymbol kthSymbol = new KthSymbol();
+        int result = kthSymbol.kthGrammar(40, 1);
+        System.out.println("The kth symbol is: " + result);
     }
 }
