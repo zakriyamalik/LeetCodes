@@ -120,3 +120,49 @@
 
 
 //Third logic
+
+
+
+package Recursion;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class KthSymbol {
+    List<Integer> list=new ArrayList<>();
+    List<Integer> tempList=new ArrayList<>();
+    int size=0;
+    public void intializer() {
+        list.add(0);
+
+    }
+    public int kthGrammar(int n, int k) {
+        intializer();
+        if(n==1)
+        {
+            System.out.println("Element is \t"+list.getFirst());
+            return list.getFirst();
+        }
+
+        //  System.out.println("size is :\t"+size+" "+list.size()+" "+list.getFirst()+" "+list.get(size-1)+" "+list);
+        for(int i=1;i<n;i++)
+        {
+            tempList.addAll(list);
+            for (int j = 0; j < list.size(); j++) {
+                tempList.set(j, list.get(j) == 0 ? 1 : 0);
+            }
+
+            list.addAll(tempList);
+            tempList.clear();
+        }
+        System.out.println("Element is \t"+list.get(k-1)+list);
+
+        return list.get(k-1);
+    }
+
+    public static void main() {
+        KthSymbol kthSymbol=new KthSymbol();
+        kthSymbol.kthGrammar(30,2);
+    }
+}
