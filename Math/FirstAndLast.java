@@ -1,3 +1,5 @@
+package Math;
+
 public class FirstAndLast {
     public int[] searchRange(int[] nums, int target) {
         int[] result = {-1, -1};

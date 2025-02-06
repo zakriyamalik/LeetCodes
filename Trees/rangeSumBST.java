@@ -28,6 +28,6 @@ public class rangeSumBST {
 
         rangeSumBST rangeSumBST = new rangeSumBST();
         int result = rangeSumBST.rangeSumBst(root, 7, 15);
-        System.out.println("Sum of values between 7 and 15: " + result);
+        System.out.println("Math.Sum of values between 7 and 15: " + result);
     }
 }

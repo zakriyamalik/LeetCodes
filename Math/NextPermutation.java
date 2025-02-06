@@ -1,9 +1,6 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+package Math;
 
-import static java.util.Collections.swap;
+import java.util.Arrays;
 
 public class NextPermutation {
     public static int findPivot(int [] nums)

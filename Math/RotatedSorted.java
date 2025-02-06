@@ -1,3 +1,5 @@
+package Math;
+
 class RotatedSorted {
     public int search(int[] nums, int target) {
         for(int i=0;i<nums.length;i++)

@@ -1,3 +1,5 @@
+package Math;
+
 public class TwoSumII {
     boolean flage=false;
     int left=0;int right=0;

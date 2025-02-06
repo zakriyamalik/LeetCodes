@@ -1,3 +1,5 @@
+package Math;
+
 public class Sum {
         public int[] twoSum(int[] nums, int target) {
             // LinkedList<Integer> res = new LinkedList<Integer>();

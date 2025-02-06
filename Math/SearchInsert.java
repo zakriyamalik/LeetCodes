@@ -1,3 +1,5 @@
+package Math;
+
 public class SearchInsert {
     public int searchInsert(int[] nums, int target) {
         int res=-1;

@@ -1,3 +1,5 @@
+package Math;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class Permutations {
         int[] arr = {5,4,6,2};
         List<List<Integer>> result = permutations.permute(arr);
 
-        System.out.println("Permutations:");
+        System.out.println("Math.Permutations:");
         for (List<Integer> list : result) {
             System.out.println(list);
         }

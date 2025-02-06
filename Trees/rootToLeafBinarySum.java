@@ -72,6 +72,6 @@ public class rootToLeafBinarySum {
 
         rootToLeafBinarySum solver = new rootToLeafBinarySum();
         int sum = solver.sumRootToLeaf(root);
-        System.out.println("Sum of all root-to-leaf paths: " + sum);
+        System.out.println("Math.Sum of all root-to-leaf paths: " + sum);
     }
 }
