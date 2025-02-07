@@ -169,7 +169,6 @@
 
 
 
-
 //Fourth Logic
 
 
@@ -268,5 +267,7 @@ public class KthSymbol {
         KthSymbol kthSymbol = new KthSymbol();
         int result = kthSymbol.kthGrammar(40, 1);
         System.out.println("The kth symbol is: " + result);
+        //Testing hammer imoji
+
     }
 }
