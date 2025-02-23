@@ -35,8 +35,19 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 10, 5, 7, 3, 1, 8, 4, 6,9};
-        quickSort(arr, 0, arr.length - 1);
+        int[] arr = new int[11];
+        // Fill indices 1 through 10 with your data.
+        arr[1] = 2;
+        arr[2] = 10;
+        arr[3] = 5;
+        arr[4] = 7;
+        arr[5] = 3;
+        arr[6] = 1;
+        arr[7] = 8;
+        arr[8] = 4;
+        arr[9] = 6;
+        arr[10] = 9;
+        quickSort(arr, 1, 10);
         System.out.println("Sorted array: " + java.util.Arrays.toString(arr));
     }
 }
