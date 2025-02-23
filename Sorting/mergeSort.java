@@ -70,7 +70,9 @@ public class mergeSort {
             return A;
         }
         int q = (start + end) / 2;
+
         mergeSort(A, start, q);
+
         mergeSort(A, q + 1, end);
         merge(A, start, q, end);
         return A;
